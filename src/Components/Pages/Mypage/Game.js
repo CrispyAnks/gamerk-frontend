@@ -37,7 +37,7 @@ function Game(props) {
     })
     .catch(()=>{})}
     const fetchCOM = async () => {
-      await fetch('/mark/game/' + GAME_ID + '?pageNum=1&pageSize=3',requestOptions)
+      await fetch('/api/mark/game/' + GAME_ID + '?pageNum=1&pageSize=3',requestOptions)
       .then((res =>{
         return res.json();
       })).then(data => {
