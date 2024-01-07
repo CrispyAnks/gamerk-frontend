@@ -1,22 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function SideMenu(props) {
-  const [isShow, setIsShow] = useState(false);
-  const handleClose1 = () => setIsShow(false);
-  const handleShow1 = () => setIsShow(true);
+  const {isShow, handleClose1 } = props;
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow1}>
-        Gamerk
-      </Button>
-
-      <Offcanvas show={isShow} onHide={handleClose1}>
+      <Offcanvas id={`offcanvasNavbar-expand`} show={isShow} onHide={handleClose1}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>M E N U</Offcanvas.Title>
         </Offcanvas.Header>
