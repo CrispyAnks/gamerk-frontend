@@ -34,7 +34,7 @@ function Mypage(props) {
       .catch(()=>{})}
 
       const fetchCOM = async () => {
-        await fetch('/mark/user/?pageNum=1&pageSize=3', requestOptions)
+        await fetch('/api/mark/user/?pageNum=1&pageSize=3', requestOptions)
         .then((res =>{
           return res.json();
         })).then(data => {
