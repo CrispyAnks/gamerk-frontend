@@ -45,7 +45,7 @@ function Game(props) {
         setCommentData(data.data.items);
         console.log(data)
         console.log(commentData)
-        if(commentData.length===0){
+        if(commentData.length === 0 || data.data.total === 0){
           setShow(true);
         }else{
           setShow(false);
