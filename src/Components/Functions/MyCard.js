@@ -22,7 +22,7 @@ function MyCard({comAtt}) {
           {comAtt.comment}
         </Card.Text>
       </Card.Body>
-      <Card.Footer className="text-muted">日付: {formatDateString(comAtt.commentdate)} <ManageComment method={'PUT'} bottonName={'Manage'}/>   <DeleteComment markid={comAtt.markid}/></Card.Footer>
+      <Card.Footer className="text-muted">日付: {formatDateString(comAtt.commentdate)} <ManageComment method={'PUT'} bottonName={'Manage'} comAtt={comAtt}/>   <DeleteComment markid={comAtt.markid}/></Card.Footer>
     </Card>
     <br/>
     </>
