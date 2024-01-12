@@ -12,9 +12,9 @@ function ManageComment(props) {
     const handleShow = () => setShow(true);
 
     const [comment, setComment] = useState({
-      'rating' : props.comAtt.rating,
-      'status' : props.comAtt.status,
-      'comment' : props.comAtt.comment
+       'rating' : '',
+      'status' : '',
+      'comment' : ''
     }); 
     const ratingHandler = ((e) => {setComment(prevState => ({...prevState, rating: e.target.value}))})
     const statusHandler = ((e) => {setComment(prevState => ({...prevState, status: e.target.value}))})
