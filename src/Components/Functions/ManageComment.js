@@ -12,9 +12,9 @@ function ManageComment(props) {
     const handleShow = () => setShow(true);
 
     const [comment, setComment] = useState({
-      'rating' : '',
-      'status' : '',
-      'comment' : ''
+      'rating' : props.comAtt.rating,
+      'status' : props.comAtt.status,
+      'comment' : props.comAtt.comment
     }); 
     const ratingHandler = ((e) => {setComment(prevState => ({...prevState, rating: e.target.value}))})
     const statusHandler = ((e) => {setComment(prevState => ({...prevState, status: e.target.value}))})
@@ -36,7 +36,7 @@ function ManageComment(props) {
       console.log(token)
 
       var requestOptions = {
-        method: 'POST',
+        method: props.method,
         body: raw,
         headers: myHeaders  
       };
@@ -56,19 +56,19 @@ function ManageComment(props) {
   return (
     <>
       <Button variant="success" onClick={handleShow}>
-        Manage
+        {props.bottonName}
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Manage your comment</Modal.Title>
+          <Modal.Title>コメントの操作</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <form action="#" method="post">
                 <table class="table table-borderless">
                       <tbody>
                       <tr>
-                        <th>Rating:</th>
+                        <th>レーティング:</th>
                         <td><input type="text" placeholder="Edit rating" name="rating" onChange={ratingHandler}/></td>
                       </tr>
                       <tr>
@@ -80,7 +80,7 @@ function ManageComment(props) {
                           <label class="form-check-label" for="radio2">Played</label></td>
                       </tr>
                       <tr>
-                        <td><label for="comment">Comment：</label></td>
+                        <td><label for="comment">コメント：</label></td>
                         <td>
                           <div class="mb-3 mt-3">
                             <textarea class="form-control" rows="5" id="comment" name="comment" onChange={commentHandler}></textarea>
