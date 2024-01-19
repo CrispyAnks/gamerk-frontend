@@ -16,7 +16,7 @@ function NavBar() {
   const [showOffCanvNav, setShowOffCanvNav] = useState(false);
   return (
     <>
-    <Navbar collapseOnSelect expand="md" className="" style={{padding:0, backgroundColor:'#9177F2', opacity:0.8, height:'4rem'}}>
+    <Navbar collapseOnSelect expand="md" className="" style={{padding:0, backgroundColor:'#9177F2', opacity:0.8}}>
       <Container style={{margin:0, padding:0, maxWidth:'100%'}}>
       <Button style={{height:'100%',borderRadius: '0',color: 'white', fontFamily:'monospace',fontSize:'18px',fontWeight: 'bolder', backgroundColor:'#410590', height:'4rem'}} variant="dark" onClick={() => setShowOffCanvNav(true)}>Gamerk</Button>
       <SideMenu userid={userid}/>
