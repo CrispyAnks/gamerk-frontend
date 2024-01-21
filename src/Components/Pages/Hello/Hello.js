@@ -5,7 +5,7 @@ import NewRel from '../../List/NewRel'
 import Ranking from '../../List/Ranking'
 import NewsBullet from '../../Functions/NewsBullet'
 import MainView from '../../Functions/MainView'
-import { async } from 'q'
+import { Container,Row,Col } from 'react-bootstrap'
 
 function Hello() {
   const NEW_GAME = {};
@@ -53,23 +53,20 @@ function Hello() {
     console.log(newsData)
   },[])
   return (
-    <div class="container-fluid" id="main">
+    <Container>
       
       <div class="row" className={styles.myrow} style={{margin:0}}>
         <NavBar style={{ position: 'relative', zIndex: 2 }}/>
         <MainView style={{ position: 'relative', zIndex: 1 }}/>
       </div>
-      <div class="row">
-        <div class="col-5">
-          {rankingData.data ? (rankingData.data.map(game =>  <Ranking key={game.gameid} gameAtt={game}/>)) : (<p>loading...</p>)}
-           
-        </div>
-        <div class="col-7">
-          
+      <Row>
+        <Col sm={4}>
+        {rankingData.data ? (rankingData.data.map(game =>  <Ranking key={game.gameid} gameAtt={game}/>)) : (<p>loading...</p>)}
+        </Col>
+        <Col sm={8}>
         {newsData.data ? (newsData.data.map(news => <NewsBullet key={news.newsid} newsAtt={news}/>)) : (<p>loading...</p>)}   
-        
-        </div>
-      </div>
+        </Col>
+      </Row>
       <div class="row" className={styles.myrow}>
         <div class="col">
           {newgameData.data ? (newgameData.data.map(game => <NewRel key={game.gameid} gameAtt={game}/>)) : (<p>loading...</p>)}
@@ -77,7 +74,7 @@ function Hello() {
         </div>
         
       </div>
-    </div>
+    </Container>
   )
 }
 
