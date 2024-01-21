@@ -6,7 +6,7 @@ import Bio from '../../List/Bio'
 import GameIntro from '../../List/GameIntro'
 import GameInfo from '../../List/GameInfo'
 import Comments from '../../List/Comments'
-import Links from '../../List/Links'
+import { Container,Row,Col } from 'react-bootstrap'
 
 function Game(props) {
   const COM_DATA={}
@@ -68,31 +68,31 @@ function Game(props) {
     
 }, []);
   return (
-    <div class="container-fluid" id="main">
+    <Container>
         <NavBar/>
         <div class='row' className={styles.myrow}>
      
      </div>
-     <div class="row">
-     <div class="col-4">
-       {gameData.data != null && <Avatar ava={gameData.data.imgsrc}/>}
-     </div>
-     <div class="col-8">
-       {gameData.data != null && <Bio bio={gameData.data}/>}
-     </div>
-     </div>
+     <Row>
+      <Col sm={5}>
+      {gameData.data != null && <Avatar ava={gameData.data.imgsrc}/>}
+      </Col>
+      <Col sm={7}>
+      {gameData.data != null && <Bio bio={gameData.data}/>}
+      </Col>
+     </Row>
      <div class='row' className={styles.myrow}>
     
      </div>
-      
-     <div class="row">
-      <div class="col-4">
-        {gameData.data != null && <GameInfo info={gameData.data}/>}
-      </div>
-      <div class="col-8">
+
+     <Row>
+      <Col sm={5}>
+      {gameData.data != null && <GameInfo info={gameData.data}/>}
+      </Col>
+      <Col sm={7}>
       {gameData.data != null && <GameIntro intro={gameData.data} gameid={GAME_ID} show={show}/>}
-      </div>
-      </div>
+      </Col>
+     </Row>
       <div class='row' className={styles.myrow}>
     
      </div>
@@ -106,7 +106,7 @@ function Game(props) {
       </div> */}
     </div> 
 
-    </div>
+    </Container>
   )
 }
 
