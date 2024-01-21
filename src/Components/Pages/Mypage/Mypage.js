@@ -6,7 +6,7 @@ import Bio from '../../List/Bio'
 import Marked from '../../List/Marked'
 import Statistics from '../../List/Statistics'
 import Comments from '../../List/Comments'
-import { NavLink } from 'react-bootstrap'
+import { Container,Row,Col } from 'react-bootstrap'
 import LogOut from '../../Functions/LogOut'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
@@ -62,7 +62,7 @@ function Mypage(props) {
         fetchCOM();      
   }, []);
   return (
-    <div class="container-fluid" id="main">
+    <Container>
       <NavBar/>
       <div class='row' className={styles.myrow}>
      
@@ -78,23 +78,21 @@ function Mypage(props) {
       <div class='row' className={styles.myrow}>
      
       </div>
-      <div class="row">
-      <div class="col">
-        {Array.isArray(commentData) && <Marked data={commentData}/>}
-      </div>
-      <div class="col" style={{margin:'auto 0'}}>
-        {Array.isArray(commentData) && <Statistics/>}
-        <br/>
-        <br/>
-        
-      </div>
-      </div>
+      
+      <Row>
+        <Col> {Array.isArray(commentData) && <Marked data={commentData}/>}
+        </Col>
+        <Col>{Array.isArray(commentData) && <Statistics/>}
+        </Col>
+      </Row>
+      <br/>
+       <br/>
       <div class="row">
       {Array.isArray(commentData) && commentData.length > 0 && (<Comments Usercoms={commentData}/>)}
       </div>
      
 
-    </div>
+    </Container>
   )
 }
 
