@@ -12,21 +12,21 @@ function ManageComment(props) {
     const handleShow = () => setShow(true);
 
     const [comment, setComment] = useState({
-      'rating' : '',
-      'status' : '',
-      'comment' : ''
+      'rating' : props.comAtt ? props.comAtt.rating : '',
+      'status' : props.comAtt ? props.comAtt.status : '',
+      'comment' : props.comAtt ? props.comAtt.comment : ''
     }); 
     const ratingHandler = ((e) => {setComment(prevState => ({...prevState, rating: e.target.value}))})
     const statusHandler = ((e) => {setComment(prevState => ({...prevState, status: e.target.value}))})
     const commentHandler = ((e) => {setComment(prevState => ({...prevState, comment: e.target.value}))})
     const handleManage = () => {
       var raw = JSON.stringify({
-        "markid": props.comatt ? props.comatt.markid : 0,
+        "markid": props.comAtt ? props.comAtt.markid : 0,
         "status": comment.status,
         "rating": comment.rating,
         "comment": comment.comment,
         "userid": localStorage.getItem('userid'),
-        "gameid": props.gameid
+        "gameid": props.comAtt.gameid
       });
 
       var myHeaders = new Headers();
