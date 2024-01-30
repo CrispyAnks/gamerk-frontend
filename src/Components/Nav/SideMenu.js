@@ -14,9 +14,9 @@ function SideMenu(props) {
         </Offcanvas.Header>
         <Offcanvas.Body style={{backgroundcolor:'rgba(246, 173, 73, 0.95)', textAlign:'center'}}>
           <ListGroup defaultActiveKey="#link1" >
-          {/* <ListGroup.Item action >
+            <ListGroup.Item action >
               <NavLink to='/' className='nav-link' style={{fontWeight: 'bold' }}>ホーム</NavLink>
-            </ListGroup.Item> */}
+            </ListGroup.Item>
             {props.userid == null &&<ListGroup.Item action>
              <NavLink to='/login' className='nav-link' style={{fontWeight: 'bold' }}>ログイン</NavLink>
             </ListGroup.Item>}
@@ -30,9 +30,9 @@ function SideMenu(props) {
             <ListGroup.Item action>
              <NavLink to='/logout' className='nav-link' style={{fontWeight: 'bold' }}>ログアウト</NavLink>
             </ListGroup.Item>}
-            {/* <ListGroup.Item action>
-              <NavLink to='/about' className='nav-link'>A B O U T  M E</NavLink>
-            </ListGroup.Item> */}
+            <ListGroup.Item action>
+              <NavLink to='https://sei-portfolio-e34a1928f16c.herokuapp.com/' className='nav-link'>A B O U T  M E</NavLink>
+            </ListGroup.Item>
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>
