@@ -31,7 +31,7 @@ function SideMenu(props) {
              <NavLink to='/logout' className='nav-link' style={{fontWeight: 'bold' }}>ログアウト</NavLink>
             </ListGroup.Item>}
             <ListGroup.Item action>
-              <NavLink to='https://sei-portfolio-e34a1928f16c.herokuapp.com/' className='nav-link'>A B O U T  M E</NavLink>
+              <NavLink to='https://hal-th23-port-ih15-a26.azurewebsites.net/#' className='nav-link'>A B O U T  M E</NavLink>
             </ListGroup.Item>
           </ListGroup>
         </Offcanvas.Body>
