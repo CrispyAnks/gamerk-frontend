@@ -30,9 +30,7 @@ function SideMenu(props) {
             <ListGroup.Item action>
              <NavLink to='/logout' className='nav-link' style={{fontWeight: 'bold' }}>ログアウト</NavLink>
             </ListGroup.Item>}
-            <ListGroup.Item action>
-              <a href='50.17.178.19' className='nav-link'>A B O U T  M E</NavLink>
-            </ListGroup.Item>
+           
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>
