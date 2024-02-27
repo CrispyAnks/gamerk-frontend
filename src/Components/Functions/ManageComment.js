@@ -26,7 +26,7 @@ function ManageComment(props) {
         "rating": comment.rating,
         "comment": comment.comment,
         "userid": localStorage.getItem('userid'),
-        "gameid": props.comAtt.gameid
+        "gameid": props.gameid
       });
 
       var myHeaders = new Headers();
